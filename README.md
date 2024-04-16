@@ -75,39 +75,23 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
 --------------------------------------------------------------------
 
 
-sudo tee /etc/systemd/system/evmosd.service > /dev/null << EOF
-
-[Unit]
-
-Description=evmosd node service
-
-After=network-online.target
-
-[Service]
-
-User=$USER
-
-ExecStart=$(which cosmovisor) run start
-
-Restart=on-failure
-
-RestartSec=10
-
-LimitNOFILE=65535
-
-Environment="DAEMON_HOME=$HOME/.evmosd"
-
-Environment="DAEMON_NAME=evmosd"
-
-Environment="UNSAFE_SKIP_BACKUP=true"
-
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.evmosd/cosmovisor/current/bin"
-
-[Install]
-
-WantedBy=multi-user.target
-
-EOF
+sudo tee /etc/systemd/system/evmosd.service > /dev/null << EOF    
+[Unit]    
+Description=evmosd node service    
+After=network-online.target    
+[Service]     
+User=$USER    
+ExecStart=$(which cosmovisor) run start     
+Restart=on-failure    
+RestartSec=10    
+LimitNOFILE=65535    
+Environment="DAEMON_HOME=$HOME/.evmosd"   
+Environment="DAEMON_NAME=evmosd"    
+Environment="UNSAFE_SKIP_BACKUP=true"     
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/.evmosd/cosmovisor/current/bin"    
+[Install]     
+WantedBy=multi-user.target    
+EOF    
 
 
 ------------------------------------------------------------------------------------------
