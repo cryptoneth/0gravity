@@ -231,21 +231,21 @@ evmosd q bank balances $(evmosd keys show wallet -a)
 
 -----------------------------------------------------------------
 
-evmosd tx staking create-validator \
-  --amount=10000000000000000aevmos \
-  --pubkey=$(evmosd tendermint show-validator) \
-  --moniker=YOUR_MONIKER \
-  --chain-id=zgtendermint_9000-1 \
-  --commission-rate=0.05 \
-  --commission-max-rate=0.10 \
-  --commission-max-change-rate=0.01 \
-  --min-self-delegation=1 \
-  --from=wallet \
-  --website="YOUR_WEBSITE" \
-  --details="YOUR_DETAILS" \
-  --gas=500000 \
-  --gas-prices=99999aevmos \
-  -y
+evmosd tx staking create-validator \ 
+  --amount=10000000000000000aevmos \ 
+  --pubkey=$(evmosd tendermint show-validator) \ 
+  --moniker=YOUR_MONIKER \ 
+  --chain-id=zgtendermint_9000-1 \ 
+  --commission-rate=0.05 \ 
+  --commission-max-rate=0.10 \ 
+  --commission-max-change-rate=0.01 \ 
+  --min-self-delegation=1 \ 
+  --from=wallet \ 
+  --website="YOUR_WEBSITE" \ 
+  --details="YOUR_DETAILS" \ 
+  --gas=500000 \ 
+  --gas-prices=99999aevmos \ 
+  -y 
 
 --------------------------------------------------------
 
